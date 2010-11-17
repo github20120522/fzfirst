@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap     
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"     
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap>
+
+	<typeAlias alias="Student" type="com.fzibatis.Student"/>
+	
+	<select id="selectAllStudent" resultClass="Student">
+		select * from student
+	</select>
+	
+	<select id="selectStudent" parameterClass="int" resultClass="Student">
+		select * from student where id=#id#
+	</select>
+
+	<insert id="insertStudent" parameterClass="Student">
+		insert into student(id,age,sname,birth)
+		values			   (#id#,#age#,#sname#,#birth#)
+	</insert>
+
+	<delete id="deleStudent" parameterClass="int">
+		delete from student where id=#id#
+	</delete>
+
+</sqlMap>
