@@ -24,7 +24,7 @@
 	<delete id="deleStudent" parameterClass="int">
 		delete from student where id=#id#
 	</delete>
-
+	<!-- parameterClass的名字不区分大小写,可以尝试 -->
 	<update id="updateStudent" parameterClass="Student">
 		update student
 		set
