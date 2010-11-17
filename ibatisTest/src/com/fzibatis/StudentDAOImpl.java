@@ -79,32 +79,41 @@ public class StudentDAOImpl implements StudentDAO {
 	}
 
 	public void updateStudent(Student student) {
-		// TODO Auto-generated method stub
-
+		try {
+			sqlMapClient.update("updateStudent", student);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public static void main(String[] args){
 		
 		StudentDAOImpl studentDAOImpl = new StudentDAOImpl();
 		
-		//删除指定id
-//		studentDAOImpl.deleStudent(4);
-		//增加一条数据
+		/**删除指定id**/
+//		studentDAOImpl.deleStudent(5);
+		/**增加一条数据**/
 //		Student st = new Student();
-//		st.setId(5);
-//		st.setSname("xiaoC");
+//		st.setId(4);
+//		st.setSname("aaa");
 //		st.setAge(1);
 //		st.setBirth(Date.valueOf("2010-11-17"));
 //		studentDAOImpl.addStudent(st);
-		//查询表中所有数据
-//		List<Student> studentList = studentDAOImpl.queryForAllStudent();
-//		for(int i=0; i<studentList.size(); i++){
-//			Student s = studentList.get(i);
-//			System.out.println("姓名："+s.getSname()+" 年龄："+s.getAge()+" 生日："+s.getBirth());
-//		}
-		//查询指定id的数据
+		/**查询指定id的数据**/
 //		System.out.println(studentDAOImpl.queryStudent(1).getSname());
-		//更新指定id的数据
-		
+		/**更新指定id的数据**/
+		Student stu = new Student();
+		stu.setId(4);
+		stu.setAge(2);
+		stu.setSname("sssxxx");
+		stu.setBirth(Date.valueOf("2012-12-31"));
+		studentDAOImpl.updateStudent(stu);
+		/**查询表中所有数据**/
+		List<Student> studentList = studentDAOImpl.queryForAllStudent();
+		for(int i=0; i<studentList.size(); i++){
+			Student s = studentList.get(i);
+			System.out.println("姓名："+s.getSname()+" 年龄："+s.getAge()+" 生日："+s.getBirth());
+		}
 	}
 }
