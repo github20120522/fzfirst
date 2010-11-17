@@ -25,4 +25,14 @@
 		delete from student where id=#id#
 	</delete>
 
+	<update id="updateStudent" parameterClass="Student">
+		update student
+		set
+			sname=#sname#,
+			age=#age#,
+			birth=#birth#
+		where
+			id=#id#
+	</update>
+
 </sqlMap>
