@@ -73,9 +73,18 @@ public class StudentDAOImpl implements StudentDAO {
 		return student;
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Student> queryStudentByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		List<Student> studentList = null;
+		
+		try {
+			studentList = sqlMapClient.queryForList("selectStudentByName", name);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return studentList;
 	}
 
 	public void updateStudent(Student student) {
@@ -110,7 +119,13 @@ public class StudentDAOImpl implements StudentDAO {
 		stu.setBirth(Date.valueOf("2012-12-31"));
 		studentDAOImpl.updateStudent(stu);
 		/**查询表中所有数据**/
-		List<Student> studentList = studentDAOImpl.queryForAllStudent();
+//		List<Student> studentList = studentDAOImpl.queryForAllStudent();
+//		for(int i=0; i<studentList.size(); i++){
+//			Student s = studentList.get(i);
+//			System.out.println("姓名："+s.getSname()+" 年龄："+s.getAge()+" 生日："+s.getBirth());
+//		}
+		/**模糊查询**/
+		List<Student> studentList = studentDAOImpl.queryStudentByName("x");
 		for(int i=0; i<studentList.size(); i++){
 			Student s = studentList.get(i);
 			System.out.println("姓名："+s.getSname()+" 年龄："+s.getAge()+" 生日："+s.getBirth());
