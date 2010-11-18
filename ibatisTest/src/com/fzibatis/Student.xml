@@ -17,7 +17,7 @@
 	</select>
 
 	<insert id="insertStudent" parameterClass="Student">
-		insert into student(id,age,sname,birth)
+		insert into student(id,  age,  sname,  birth)
 		values			   (#id#,#age#,#sname#,#birth#)
 	</insert>
 
@@ -41,4 +41,12 @@
 		from student
 		where sname like '%$sname$%'
 	</select>
+	
+	<insert id="insertStudentBySequence" parameterClass="Student">
+		<selectKey keyProperty="id" resultClass="int">
+			SELECT LAST_INSERT_ID() as id
+		</selectKey>
+		insert into student(id,  age,  sname,  birth)
+		values			   (#id#,#age#,#sname#,#birth#)
+	</insert>
 </sqlMap>
