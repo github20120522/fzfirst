@@ -34,5 +34,11 @@
 		where
 			id=#id#
 	</update>
-
+	<!-- 模糊查询要用$括住需要查询的字符串，之后可以按照sql中的语法对这个字符串进行模糊查询 -->
+	<!-- 另一种写法是，在传入的参数中就直接加上%%号，这样sql中就不必再加%%号了 -->
+	<select id="selectStudentByName" parameterClass="String" resultClass="Student">
+		select id,sname,age,birth
+		from student
+		where sname like '%$sname$%'
+	</select>
 </sqlMap>
