@@ -1,0 +1,17 @@
+<dom4j>
+	<dom class="4j">
+		<property name="Test1j" value="ok1">dom4j????</property>
+		<property name="Test2j" value="ok2" />
+		<property name="Test3j" value="ok3" />
+		<property name="Test4j" value="ok4" />
+		<property name="Test5j" value="ok5" />
+	</dom>
+	
+	<dom class="5j">
+		<property name="1" value="1" />
+		<property name="2" value="22" />
+		<property name="3" value="333" />
+		<property name="4" value="4444" />
+		<property name="5" value="55555" />
+	</dom>
+</dom4j>
