@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta name="keywords" content="native2ascii,ascii,在线转换">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>在线native2ascii</title>
+<style type="text/css">
+<!--
+body {
+	font-size:12px;
+	overflow-y:auto;
+}
+textarea{
+	width:100%;
+	height:100%; 
+	overflow:auto;
+}
+-->
+</style></head>
+
+<body>
+<p><script language="javascript" src="scripts/native2ascii3.js"></script></p>
+<form name="characterCode">
+<h1 align="center">在线native2ascii</h1><br>
+<p align="center">主要用于各类代码中各类本地字符的Unicode转换，可以将整个代码直接拷入转换，系统将自动跳过字母、数字与字符。</p>
+<center><div style="text-align:left;width:80%;"><input type="checkbox" name="ignoreLetter" id="ignoreLetter" checked=true>不转换字母和数字。<a href="download/native2ascii.zip">下载native2ascii.zip</a></div></center>
+<table align="center" width="80%" height="70%" cellspacing="0" cellpadding="5" style="border:#00486A dotted 1; background-color:#B0D8FF;">
+<tr height="20">
+<td>Native</td>
+<td width="10">
+</td>
+<td>Ascii</td></tr>
+<tr>
+<td><textarea id="characterTa" name="characterTa"></textarea></td>
+<td width="10"><input type="button" value="▶" onClick="native2ascii();" class="submit"><br>
+<input type="button" value="◀" onClick="ascii2native();" class="submit">
+</td>
+<td><textarea id="asciiTa" name="asciiTa"></textarea></td>
+</tr>
+</table>
+</form>
+<div style="border:0; text-align:center">&copy; 2008 <a href="http://www.native2ascii.com" target="_self">www.native2ascii.com</a><br></div>
+
+<center>
+<div align="center" style="width: 400px;">
+<fieldset>
+<legend>健康信息：</legend>
+<form>
+<label>身高：<input type="text" /></label><br/>
+<label>体重：<input type="text" /></label>
+</form>
+</fieldset>
+</div>
+</center>
+
+</body>
+</html>
