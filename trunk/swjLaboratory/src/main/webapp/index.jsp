@@ -176,5 +176,6 @@ function jsTree(){
 	</div>
 	<div style="margin-left: 100px;display: none;"><input id="surprise" type="button" value="送你一朵js玫瑰花" onclick="jsFlower();$(this).attr('disabled',true).attr('value','漂亮吧');"/></div>
 	<div style="margin-left: 100px;display: none;"><input id="surprise" type="button" value="js圣诞树。。" onclick="jsTree();$(this).attr('disabled',true).attr('value','js圣诞树');"/></div>
+</div>
 </body>
 </html>
