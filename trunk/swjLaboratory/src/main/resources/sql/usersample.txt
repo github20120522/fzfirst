@@ -1,6 +1,0 @@
-CREATE TABLE `tb_user_sample` (
-  `id` int(10) NOT NULL,
-  `name` varchar(10) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8
