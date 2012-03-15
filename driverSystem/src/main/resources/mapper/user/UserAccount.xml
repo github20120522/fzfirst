@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.swj.model.user.UserAccount">
+	<insert id="addUserAccount" parameterType="UserAccount" useGeneratedKeys="true">
+		insert into driver_userAccount(id,userid,nowPrice,historyPrice) values(#{id},#{userid},#{nowPrice},#{historyPrice})
+	</insert>
+	
+	<select id="selectUserAccount" parameterType="string" resultType="UserAccount">
+		select * from driver_userAccount where userid = #{userid}
+	</select>
+	
+	<update id="updateUserAccount" parameterType="UserAccount">
+		update driver_userAccount ua set ua.nowPrice = #{nowPrice},ua.historyPrice = #{historyPrice} where ua.id = #{id}
+	</update>
+</mapper>

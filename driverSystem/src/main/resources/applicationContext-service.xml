@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
+    http://www.springframework.org/schema/aop
+    http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+    
+	<!-- spring security 定义上下文返回的消息的国际化。 -->
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:message_zh_CN"/>
+	</bean>
+    
+    <!-- BaseService -->
+    <bean id="baseService" class="com.swj.service.impl.BaseServiceImpl">
+    	<property name="baseDAO" ref="baseDAO"/>
+    </bean>
+    
+    <!-- ^华丽的分割线^ -->
+    <bean id="userSampleService" class="com.swj.service.impl.sample.UserSampleServiceImpl" parent="baseService">
+		<property name="userSampleDAO" ref="userSampleDAO"/>
+	</bean>
+	
+	<bean id="userService" class="com.swj.service.impl.user.UserServiceImpl" parent="baseService">
+		<property name="userDAO" ref="userDAO"/>
+	</bean>
+	
+	<bean id="driverService" class="com.swj.service.impl.driver.DriverServiceImpl" parent="baseService">
+		<property name="driverDAO" ref="driverDAO"/>
+	</bean>
+</beans>

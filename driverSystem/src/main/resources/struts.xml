@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.reload" value="true" />
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<constant name="struts.locale" value="zh_CN" />
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.action.extension" value="action" />
+
+	<package name="struts2" extends="json-default">
+	
+		<action name="userSampleAction" class="userSampleAction">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="getUserSample">/WEB-INF/pages/userSample.jsp</result>
+			<result name="json" type="json"/>
+		</action>
+		
+		<action name="fzJofc2Action" class="fzJofc2Action">
+			<result name="gotoJofc2">/WEB-INF/pages/jofc2.jsp</result>
+			<result name="jofc2Test" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		
+		<action name="userAction" class="userAction">
+			<result name="success" type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">inputStream</param>
+			</result>
+			<result name="saveUser">/regSuccess.jsp</result>
+			<result name="viewAccount">/WEB-INF/pages/user/viewAccount.jsp</result>
+		</action>
+		
+		<action name="driverAction" class="driverAction">
+			<result name="listDriverInfo">/WEB-INF/pages/driver/listDriverInfo.jsp</result>
+			<result name="buyBill">/WEB-INF/pages/driver/buyBill.jsp</result>
+			<result name="buySuccess">/WEB-INF/pages/driver/buySuccess.jsp</result>
+			<result name="buyFailed">/WEB-INF/pages/driver/buyFailed.jsp</result>
+			<result name="showUserBill">/WEB-INF/pages/driver/showUserBill.jsp</result>
+			<result name="retreatBill">/WEB-INF/pages/driver/retreatBill.jsp</result>
+			<result name="retreatBillSuccess">/WEB-INF/pages/driver/retreatBillSuccess.jsp</result>
+			<result name="retreatBillFailed">/WEB-INF/pages/driver/retreatBillFailed.jsp</result>
+		</action>
+		
+	</package>
+</struts>

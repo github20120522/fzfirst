@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="true"/>  
+		<setting name="lazyLoadingEnabled" value="true"/>  
+		<setting name="multipleResultSetsEnabled" value="true"/>  
+		<setting name="useColumnLabel" value="true"/>  
+		<setting name="useGeneratedKeys" value="true"/>  
+		<setting name="defaultExecutorType" value="SIMPLE"/>  
+		<setting name="defaultStatementTimeout" value="25000"/>  
+	</settings>
+	<typeAliases>
+		<typeAlias type="com.swj.model.sample.UserSample" alias="UserSample"/>
+		<typeAlias type="com.swj.model.user.User" alias="User"/>
+		<typeAlias type="com.swj.model.user.Authority" alias="Authority"/>
+		<typeAlias type="com.swj.model.user.UserAccount" alias="UserAccount"/>
+		<typeAlias type="com.swj.model.driver.DriverInfo" alias="DriverInfo"/>
+		<typeAlias type="com.swj.model.driver.DriverBill" alias="DriverBill"/>
+	</typeAliases>
+	<mappers>
+		<mapper resource="mapper/sample/UserSample.xml"/>
+		<mapper resource="mapper/user/User.xml"/>
+		<mapper resource="mapper/user/Authority.xml"/>
+		<mapper resource="mapper/user/UserAccount.xml"/>
+		<mapper resource="mapper/driver/DriverInfo.xml"/>
+		<mapper resource="mapper/driver/DriverBill.xml"/>
+	</mappers>
+</configuration>

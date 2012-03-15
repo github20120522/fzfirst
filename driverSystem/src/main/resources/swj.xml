@@ -1,0 +1,12 @@
+<Context docBase="E:\swj\driverSystem\target\driverSystem" reloadable="true">
+  	<Resource 
+	name="jdbc/swj" 
+	auth="Container" 
+	type="javax.sql.DataSource" 
+	maxActive="5" 
+	maxIdle="2" 
+	maxWait="10000"
+	username="root" password="root"
+	driverClassName="com.mysql.jdbc.Driver"
+	url="jdbc:mysql://localhost:3306/swj?useUnicode=true&amp;characterEncoding=utf-8"/>
+</Context>
