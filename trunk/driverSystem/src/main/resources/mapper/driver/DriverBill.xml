@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.swj.model.driver.DriverBill">
+	<insert id="addDriverBill" parameterType="DriverBill" useGeneratedKeys="true">
+		insert into driver_bill(id,driverid,billcode,userid,createtime,price) 
+		values(#{id},#{driverid},#{billcode},#{userid},#{createtime},#{price})
+	</insert>
+	
+	<select id="selectCount" parameterType="DriverBill" resultType="java.lang.Integer">
+		select count(d.id) from driver_bill d where d.createtime = #{createtime} and d.driverid = #{driverid}
+	</select>
+	
+	<select id="viewUserBill" parameterType="DriverBill" resultType="DriverBill">
+		select * from driver_bill where 1=1 
+		<if test="userid > 0 ">
+			and userid = #{userid}
+		</if>
+		order by createtime
+	</select>
+	
+	<select id="getDriverBill" parameterType="string" resultType="DriverBill">
+		select * from driver_bill where 1=1 and billcode = #{billcode}
+	</select>
+	
+	<delete id="delDriverBill" parameterType="java.lang.Integer">
+		delete from driver_bill where id = #{id}
+	</delete>
+</mapper>
