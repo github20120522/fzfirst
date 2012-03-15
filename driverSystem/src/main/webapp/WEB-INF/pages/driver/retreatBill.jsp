@@ -14,7 +14,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script src="<s:url value='/'/>scripts/artDialog/plugins/iframeTools.js"></script>
 <script type="text/javascript">
 	function retreatBill(){
-		alert($("#billcode").val());
+		if($("#billcode").val() != "" && $("#billcode").val() != null){
+			art.dialog.open(
+				'driverAction!retreatBillEnd.action?billcode='+$("#billcode").val(), 
+				{
+					id: 'retreatBillEnd',
+					title: '退票',
+					width: 170,
+					height: 120
+				}
+			);
+		}else{
+			art.dialog({id: "info",title: "提示",content: "请输入退票票号！"});
+		}
 	}
 </script>
 </head>
